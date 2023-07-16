@@ -4,6 +4,6 @@
  •	Search for notes
  •	Delete a note
 
-## Go through the code for :
-Building an intuitive notes app with React is easier  than you think. With the right tools and best  practices, you can create an app that will help you  stay organized and productive. Start building your  own notes app today!
+## Why React ?
+React is a popular JavaScript library used  for building complex user interfaces. It is  ﬂexible, scalable, and reusable. Learn  how to leverage React's component  architecture to build a notes app that is easy to use and maintain.
 
