@@ -1,4 +1,5 @@
 # About This App
+This App Includes Progress Circle
 ## This app can:
  •	Create a new note
  •	Search for notes
