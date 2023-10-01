@@ -4,6 +4,7 @@ import {nanoid} from 'nanoid';
 import AddNote from "./components/AddNote";
 import Search from "./components/Search";
 import Header from "./components/Header";
+import ProgressCircle from "./components/ProgressCircle";
 const App =  () =>{
 
   const [notes,setNotes] = useState([{
@@ -68,6 +69,7 @@ const deleteNote = (id) => {
          handleAddNote={addNote} 
          handleDeleteNote={deleteNote}></NotesList>
       </div>
+      <ProgressCircle />
     </div>
   );
 };
