@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import NotesList from "./components/NotesList";
 import {nanoid} from 'nanoid';
-import AddNote from "./components/AddNote";
 import Search from "./components/Search";
 import Header from "./components/Header";
 import ProgressCircle from "./components/ProgressCircle";
