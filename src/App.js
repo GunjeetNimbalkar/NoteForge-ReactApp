@@ -5,6 +5,7 @@ import AddNote from "./components/AddNote";
 import Search from "./components/Search";
 import Header from "./components/Header";
 import ProgressCircle from "./components/ProgressCircle";
+import Login from "./components/Login";
 const App =  () =>{
 
   const [notes,setNotes] = useState([{
@@ -25,7 +26,7 @@ const App =  () =>{
 ]);
   
 const [searchText, setSearchText] = useState('');
-
+const [user, setUser] = useState(null); // Login state
 const [darkMode, setDarkMode] = useState(false);
 
 useEffect(() => {
@@ -59,15 +60,36 @@ const deleteNote = (id) => {
   const newNotes = notes.filter((note)=> note.id !== id);
   setNotes(newNotes);
 }
+
+const editNote = (id, newText) => {
+    const updatedNotes = notes.map((note) =>
+      note.id === id ? { ...note, text: newText } : note
+    );
+    setNotes(updatedNotes);
+  };
+
+
+  const handleLogin = (userData) => {
+    setUser(userData); // login success
+  };
+
+  if (!user) {
+    return <Login onLogin={handleLogin} />;
+  }
+
   return (
     <div className={`${darkMode && 'dark-mode'}`}>
       <div className="container">
         <Header handleToggleDarkMode={setDarkMode}/>
         <Search handleSearchNote={setSearchText}/>
         <NotesList 
-         notes={notes.filter((note)=> note.text.toLowerCase().includes(searchText))}
+         notes={notes.filter((note) =>
+  note.text.toLowerCase().includes(searchText.toLowerCase())
+)
+}
          handleAddNote={addNote} 
-         handleDeleteNote={deleteNote}></NotesList>
+         handleDeleteNote={deleteNote}
+         handleEditNote={editNote}></NotesList>
       </div>
       <ProgressCircle />
     </div>
